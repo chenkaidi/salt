@@ -1,0 +1,1 @@
+sed -i "s/master: 10.88.8.237/master: tools.salt.weitutor.com/g" /etc/salt/minion && sed -i "/id:/d" /etc/salt/minion && grep "master: tools.salt.weitutor.com" /etc/salt/minion && if [ -e "/etc/salt/pki/minion/minion_master.pub" ];then rm -rf "/etc/salt/pki/minion/minion_master.pub"; fi && service salt-minion restart && service salt-minion status
